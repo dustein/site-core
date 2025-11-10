@@ -32,3 +32,8 @@
   --font-core-apoio: 'BankGothic Md BT', ui-sans-serif, system-ui;
 
 }
+
+#icone-navbar {
+  height:  50px;
+  width: auto;
+}
