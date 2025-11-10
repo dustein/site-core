@@ -1,1 +1,34 @@
+@font-face {
+  font-family: 'Folio xBd BT';
+  src: url('/fonts/folio-xbd-bt/folioxbdbtextrabold.ttf') format('ttf');
+  font-weight: 800;
+  font-style: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Folio Bk BT';
+  src: url('/fonts/folio-bk-bt/foliobookbt.ttf') format('ttf');
+  font-weight: 600;
+  font-style: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BankGothic Md BT';
+  src: url('/fonts/bankgothic-md-bt/BankGothic_Md_BT.ttf') format('ttf');
+  font-weight: 600;
+  font-style: bold;
+  font-display: swap;
+}
+
 @import "tailwindcss";
+
+@theme {
+  --color-core-cinza: #D0D0CE;
+
+  --font-core: 'Folio xBd BT', ui-sans-serif, system-ui;
+  --font-core-sub: 'Folio Bk BT', ui-sans-serif, system-ui;
+  --font-core-apoio: 'BankGothic Md BT', ui-sans-serif, system-ui;
+
+}
