@@ -1,4 +1,4 @@
-import piscinaImg from '../../../public/images/ia_core_cover-hero-2.png'
+import hero_img from '/images/ia_core_cover-hero-2.png'
 
 export function Hero() {
   return (
@@ -9,11 +9,11 @@ export function Hero() {
     <div className="relative flex h-[60vh] min-h-[400px] items-center justify-center text-center">
       
       {/* 2. Camada da Imagem de Fundo */}
-      <div className="absolute inset-0 bg-cover sm:bg-contain bg-center" style={{ backgroundImage: `url(${piscinaImg})` }}></div>
+      <div className="absolute inset-0 bg-cover sm:bg-contain bg-center" style={{ backgroundImage: `url(${hero_img})` }}></div>
 
       {/* 3. Camada do Overlay */}
       {/* - `bg-black/60` cria um fundo preto com 60% de opacidade. Mude a cor e o valor (ex: bg-blue-900/75) como preferir. */}
-      <div className="absolute inset-0 bg-black/80"></div>
+      <div className="absolute inset-0 bg-black/70"></div>
 
       {/* 4. Container do Conteúdo */}
       {/* - `relative z-10`: coloca este container acima das camadas de imagem e overlay. */}
