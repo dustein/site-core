@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 
-export function Carrossel() {
+export function Carrossel({ className = "" }) {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -110,17 +110,18 @@ export function Carrossel() {
 
   return (
     <div 
-      className="relative w-full max-w-[500px] mx-auto wrap-break-words border border-gray-800 p-4 rounded-lg"
+      className={`relative w-full max-w-[500px] mx-auto wrap-break-word border border-gray-800 rounded-lg m-2 pb-2 ${className}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Card atual */}
-      <div className="bg-black p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
 
-        <h3 className="font-bold text-center text-xl mb-2 text-white wrap-break-words">
+      <div className="bg-black p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+
+        <h2 className="font-bold text-center text-xl mb-2 text-white tracking-widest">
           {items[currentIndex].title}
-        </h3>
-        <img className='h-28 mx-auto' src={items[currentIndex].logo} alt="OLAAAA" />
+        </h2>
+        
+        <img className='h-24 w-auto mx-auto' src={items[currentIndex].logo} alt={items[currentIndex].description} />
 
         <p className="text-core-cinza text-center wrap-break-word">
           {items[currentIndex].description}
@@ -131,7 +132,7 @@ export function Carrossel() {
       {/* Botões de navegação */}
       <button 
         onClick={() => handleUserInteraction(prevSlide)}
-        className="hidden xs:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-yellow-300 text-blue-950 p-2 rounded-full hover:bg-yellow-600 transition-colors shadow-lg hover:shadow-xl"
+        className="hidden xs:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-gray-600 text-blue-950 px-1 rounded-full hover:bg-gray-300 transition-colors shadow-lg hover:shadow-xl"
         aria-label="Slide anterior"
       >
         ←
@@ -139,7 +140,7 @@ export function Carrossel() {
       
       <button 
         onClick={() => handleUserInteraction(nextSlide)}
-        className="hidden xs:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-amber-300 text-blue-950 p-2 rounded-full hover:bg-amber-600 transition-colors shadow-lg hover:shadow-xl"
+        className="hidden xs:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-gray-600 text-blue-950 px-1 rounded-full hover:bg-gray-300 transition-colors shadow-lg hover:shadow-xl"
         aria-label="Próximo slide"
       >
         →
@@ -175,19 +176,6 @@ export function Carrossel() {
   </button>
 </div>
 
-
-      {/* Barra de progresso (opcional) */}
-      {/* <div className="mt-3 bg-gray-200 rounded-full h-1 overflow-hidden">
-        <div 
-          className={`h-full bg-amber-400 transition-all duration-100 ${
-            isAutoPlaying && !isPaused ? 'animate-pulse' : ''
-          }`}
-          style={{
-            width: `${((currentIndex + 1) / items.length) * 100}%`,
-            transition: isAutoPlaying && !isPaused ? `width ${AUTOPLAY_DELAY}ms linear` : 'width 0.3s ease'
-          }}
-        />
-      </div> */}
     </div>
   );
 }

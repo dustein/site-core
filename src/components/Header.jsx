@@ -1,15 +1,13 @@
 import { useState } from "react";
 import logoImage from '../assets/images/core-logo-cinza-semfundo-icone.jpg';
+import { Link } from 'react-router-dom';
 
 export function Header() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'História', href: '#historia' },
-    { name: 'Setores Especializados', href: '#setores' },
-    { name: 'Notícias', href: '#noticias' },
-    { name: 'Estatísticas', href: '#estatisticas' },
+    { name: 'Historia', href: '/historia' },
   ];
 
   return (
@@ -17,19 +15,17 @@ export function Header() {
     
     <header className="bg-black p-2 flex justify-between items-center">
         
-        <img src={logoImage} alt="CORE - Coordenadoria de Recursos Especiais" id='icone-navbar'/>
+        <img src={logoImage} className="h-10 w-auto block" alt="CORE - Coordenadoria de Recursos Especiais" />
 
         <h1 className="text-4xl font-extrabold tracking-widest text-core-cinza font-core">
           CORE
         </h1>
 
-        {/* Botão de Menu (Hamburger/Close) */}
         <button
           className="p-2 rounded-md transition duration-300 border-2 bg-core-cinza/20 text-core-cinza"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Fechar Menu" : "Abrir Menu"}
         >
-          {/* Ícone do menu ou fechar */}
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             {isMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -37,12 +33,10 @@ export function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             )}
           </svg>
-
         </button>
 
       </header>
 
-      {/* 2. Menu Overlay (Navegação Mobile) */}
       <nav 
         className={`fixed top-0 left-0 h-full w-full z-10 p-10 flex flex-col justify-center transform transition-transform duration-500 ease-in-out bg-black ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} 
         role="navigation"
@@ -57,13 +51,13 @@ export function Header() {
         <ul className="space-y-6">
           {navItems.map((item) => (
             <li key={item.name}>
-              <a 
-                href={item.href}
+              <Link 
+                to={item.href}
                 className="block text-4xl text-core-cinza font-bold uppercase tracking-wider transition-colors duration-300 hover:opacity-80"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
