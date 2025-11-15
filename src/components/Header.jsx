@@ -8,12 +8,13 @@ export function Header() {
 
   const navItems = [
     { name: 'Historia', href: '/historia' },
+    { name: 'Inicio', href: '/' },
   ];
 
   return (
     <>
     
-    <header className="bg-black p-2 flex justify-between items-center">
+    <header className="bg-black p-4 pb-6 flex justify-between items-center">
         
         <img src={logoImage} className="h-10 w-auto block" alt="CORE - Coordenadoria de Recursos Especiais" />
 
@@ -22,7 +23,7 @@ export function Header() {
         </h1>
 
         <button
-          className="p-2 rounded-md transition duration-300 border-2 bg-core-cinza/20 text-core-cinza"
+          className="p-0.5 rounded-md transition duration-300 border-2 bg-core-cinza/20 text-core-cinza"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Fechar Menu" : "Abrir Menu"}
         >
@@ -38,22 +39,25 @@ export function Header() {
       </header>
 
       <nav 
-        className={`fixed top-0 left-0 h-full w-full z-10 p-10 flex flex-col justify-center transform transition-transform duration-500 ease-in-out bg-black ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} 
+        className={`fixed top-0 right-0 h-full w-full md:w-96 z-50 p-10 flex flex-col items-center justify-center transform transition-transform duration-500 ease-in-out bg-gray-950/95 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         role="navigation"
       >
+        <div>
         <button 
-            className="absolute top-4 right-4 p-2 text-3xl font-light text-core-cinza" 
+            className="absolute top-4 right-4 p-2 text-3xl font-light text-core-cinza hover:text-amber-500 transition-colors" 
             onClick={() => setIsMenuOpen(false)}
             aria-label="Fechar Menu de Navegação"
         >
             &times;
         </button>
-        <ul className="space-y-6">
+
+        </div>
+        <ul className="space-y-6 text-center xs:m-6 mx-auto">
           {navItems.map((item) => (
             <li key={item.name}>
               <Link 
                 to={item.href}
-                className="block text-4xl text-core-cinza font-bold uppercase tracking-wider transition-colors duration-300 hover:opacity-80"
+                className="block text-xl text-core-cinza font-bold uppercase tracking-wider transition-colors duration-300 hover:opacity-80 hover:underline hover:underline-offset-4"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

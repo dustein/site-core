@@ -110,7 +110,7 @@ export function Carrossel({ className = "" }) {
 
   return (
     <div 
-      className={`relative w-full max-w-[500px] mx-auto wrap-break-word border border-gray-800 rounded-lg m-2 pb-2 ${className}`}
+      className={`relative w-72 max-w-[500px] mx-auto wrap-break-word rounded-lg m-2 pb-2 ${className}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
