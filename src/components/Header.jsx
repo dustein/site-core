@@ -9,6 +9,7 @@ export function Header() {
   const navItems = [
     { name: 'Historia', href: '/historia' },
     { name: 'Inicio', href: '/' },
+    { name: 'Galeria de Fotos', href: '/galeria' },
   ];
 
   return (
