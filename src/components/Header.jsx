@@ -7,35 +7,37 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Historia', href: '/historia' },
     { name: 'Inicio', href: '/' },
+    { name: 'Historia', href: '/historia' },
     { name: 'Galeria de Fotos', href: '/galeria' },
   ];
 
   return (
     <>
     
-    <header className="bg-black p-4 pb-6 flex justify-between items-center">
+    <header className=" sticky z-1 top-0 bg-black p-3 pb-3 border-b border-gray-700">
         
-        <img src={logoImage} className="h-10 w-auto block" alt="CORE - Coordenadoria de Recursos Especiais" />
+        <div className="flex justify-between items-center">
+          <a className="flex gap-5" href="/">
+            <img src={logoImage} className="h-10 w-auto block" alt="CORE - Coordenadoria de Recursos Especiais" />
+            <h1 className="text-4xl font-extrabold tracking-widest text-core-cinza font-core">CORE</h1>
+          </a>
 
-        <h1 className="text-4xl font-extrabold tracking-widest text-core-cinza font-core">
-          CORE
-        </h1>
+          <button
+            className="p-0.5 rounded-md transition duration-300 border-2 bg-core-cinza/20 text-core-cinza"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Fechar Menu" : "Abrir Menu"}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              {isMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+              ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              )}
+            </svg>
+          </button>
 
-        <button
-          className="p-0.5 rounded-md transition duration-300 border-2 bg-core-cinza/20 text-core-cinza"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? "Fechar Menu" : "Abrir Menu"}
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-            ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            )}
-          </svg>
-        </button>
+        </div>
 
       </header>
 
@@ -58,7 +60,7 @@ export function Header() {
             <li key={item.name}>
               <Link 
                 to={item.href}
-                className="block text-xl text-core-cinza font-bold uppercase tracking-wider transition-colors duration-300 hover:opacity-80 hover:underline hover:underline-offset-4"
+                className="block text-xl text-core-cinza font-core-apoio font-bold uppercase tracking-wider transition-colors duration-300 hover:opacity-80 hover:underline hover:underline-offset-4"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

@@ -4,12 +4,12 @@ import { Header } from './components/Header';
 import { Home } from './pages/Home';
 import { Historia } from './pages/Historia';
 import { Galeria } from './pages/Galeria';
-
+  
 const App = () => {
   
   return (
     <Router>
-      <div className="min-h-screen w-full bg-black text-white font-sans flex flex-col antialiased">
+      <div className="min-h-dvh min-h-full h-full w-full bg-black text-white font-sans flex flex-col antialiased">
         <Header />
         
         <Routes>

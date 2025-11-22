@@ -1,78 +1,13 @@
-// import * as React from "react";
-// import Lightbox from "yet-another-react-lightbox";
-// import "yet-another-react-lightbox/styles.css";
-// import Zoom from "yet-another-react-lightbox/plugins/zoom";
-// import Inline from "yet-another-react-lightbox/plugins/inline";
-// import { MasonryPhotoAlbum } from "react-photo-album";
-// import "react-photo-album/masonry.css";
-// import { Slideshow } from "yet-another-react-lightbox/plugins";
-
-// const photos = [
-//   {
-//     src: "/images/logo-core-CAO.png",
-//     width: 386,
-//     height: 470,
-//     alt: "logo core cao",
-//   },
-//   {
-//     src: "/images/logo-core-SOE.png",
-//     width: 800,
-//     height: 600,
-//     alt: "logo core soe",
-//   },
-//   {
-//     src: "/images/logo-core-GOE.png",
-//     width: 457,
-//     height: 580,    
-//     alt: "logo core goe",
-//   },
-//   {
-//     src: "/images/logo-core-CAVEIRA.png",
-//     width: 579,
-//     height: 580,
-//     alt: "logo core caveira",
-//   },
-// ];
-
-// export function Galeria() {
-//   const [open, setOpen] = React.useState(false);
-
-//   return (
-//     <div className="p-16">
-      
-//       <button type="button" onClick={() => setOpen(true)}>
-//         Open Lightbox
-//         <MasonryPhotoAlbum photos={photos} spacing={36} />
-//       </button>
-
-//       <Lightbox
-//         open={open}
-//         close={() => setOpen(false)}
-//         plugins={[Zoom, Inline, Slideshow]}
-        
-//         slides={[
-//           { src: "/images/logo-core-CAO.png" },
-//           { src: "/images/logo-core-SOE.png" },
-//           { src: "/images/logo-core-GOE.png" },
-//           { src: "/images/logo-core-CAVEIRA.png" },
-//         ]}
-//       />
-
-//     </div>
-//   );
-// }
-
 import * as React from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import Inline from "yet-another-react-lightbox/plugins/inline";
 import { MasonryPhotoAlbum } from "react-photo-album";
 import "react-photo-album/masonry.css";
 import { Slideshow } from "yet-another-react-lightbox/plugins";
 
 const photos = [
-  { src: "/images/galeria/20230428_063349(0).jpg", width: 2560, height: 1440, alt: "20230428 063349(0)" },
+  { src: "/images/galeria/20230428_0633490.jpg", width: 2560, height: 1440, alt: "20230428 0633490" },
   { src: "/images/galeria/20231009_054039.jpg", width: 2880, height: 2160, alt: "20231009 054039" },
   { src: "/images/galeria/IMG-20240504-WA0009.jpg", width: 720, height: 691, alt: "IMG 20240504 WA0009" },
   { src: "/images/galeria/20250904_135220.jpg", width: 4080, height: 3060, alt: "20250904 135220" },
@@ -102,7 +37,7 @@ export function Galeria() {
 
   return (
     <div className="p-16">
-     
+     <h1 className="text-4xl font-core-apoio font-bold text-center pb-10">Galeria de Imagens</h1>
       <MasonryPhotoAlbum
         photos={photos}
         spacing={16}

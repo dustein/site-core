@@ -7,7 +7,7 @@ export function Historia() {
   return (
     <div className="p-8 max-w-4xl mx-auto">
 
-      <h1 className="text-2xl font-bold mb-6 text-center">História da CORE</h1>
+      <h1 className="text-4xl font-core-apoio font-bold mb-6 text-center">História da CORE</h1>
       <div className='text-sm space-y-3 text-justify leading-relaxed indent-5'>
 
         <p>A Coordenadoria de Recursos Especiais (CORE) é a unidade de elite e de operações táticas da Polícia Civil do Estado do Rio de Janeiro (PCERJ).</p>
