@@ -4,7 +4,7 @@ import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import { MasonryPhotoAlbum } from "react-photo-album";
 import "react-photo-album/masonry.css";
-import { Slideshow } from "yet-another-react-lightbox/plugins";
+import { Slideshow, Fullscreen } from "yet-another-react-lightbox/plugins";
 
 const photos = [
   { src: "/images/galeria/20230428_0633490.jpg", width: 2560, height: 1440, alt: "20230428 0633490" },
@@ -36,11 +36,11 @@ export function Galeria() {
   const [index, setIndex] = React.useState(-1); 
 
   return (
-    <div className="p-16">
+    <div className="p-4">
      <h1 className="text-4xl font-core-apoio font-bold text-center pb-10">Galeria de Imagens</h1>
       <MasonryPhotoAlbum
         photos={photos}
-        spacing={16}
+        spacing={10}
      
         onClick={({ index }) => {
           setIndex(index); // Define o slide inicial
@@ -53,8 +53,8 @@ export function Galeria() {
         close={() => setOpen(false)}
         // Propriedade chave: diz ao Lightbox qual slide começar
         index={index} 
-        plugins={[Zoom, Slideshow]}
-        
+        plugins={[Zoom, Slideshow, Fullscreen]}
+        fullscreen={{ auto: true }}
         slides={photos}
       />
     </div>
