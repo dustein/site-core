@@ -9,15 +9,15 @@ const App = () => {
   
   return (
     <Router>
-      <div className="min-h-dvh min-h-full h-full w-full bg-black text-white font-sans flex flex-col antialiased">
+      <div className="flex flex-col min-h-dvh w-full bg-black text-white font-sans antialiased">
+        <main className="flex-1 overflow-auto">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/historia" element={<Historia />} />
+            <Route path="/galeria" element={<Galeria />} />
+          </Routes>
+        </main>
         <Header />
-        
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/historia" element={<Historia />} />
-          <Route path="/galeria" element={<Galeria />} />
-        </Routes>
-        
         <Footer />
       </div>
     </Router>
