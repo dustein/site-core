@@ -10,6 +10,7 @@ const App = () => {
   return (
     <Router>
       <div className="flex flex-col min-h-dvh w-full bg-black text-white font-sans antialiased">
+        <Header />
         <main className="flex-1 overflow-auto">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -17,7 +18,6 @@ const App = () => {
             <Route path="/galeria" element={<Galeria />} />
           </Routes>
         </main>
-        <Header />
         <Footer />
       </div>
     </Router>
