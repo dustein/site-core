@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Folio xBd BT';
-  src: url('/fonts/folioxbdbtextrabold.ttf') format('ttf');
+  src: url('/fonts/folioxbdbtextrabold.ttf') format('truetype');
   font-weight: 800;
   font-style: bold;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'Folio Bk BT';
-  src: url('/fonts/foliobookbt.ttf') format('ttf');
+  src: url('/fonts/foliobookbt.ttf') format('truetype');
   font-weight: 600;
   font-style: bold;
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: 'BankGothic Md BT';
-  src: url('/fonts/bankGothicmdbt.ttf') format('ttf');
+  src: url('/fonts/bankGothicmdbt.ttf') format('truetype');
   font-weight: 600;
   font-style: bold;
   font-display: swap;
