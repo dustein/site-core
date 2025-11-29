@@ -6,12 +6,11 @@ import { Historia } from './pages/Historia';
 import { Galeria } from './pages/Galeria';
   
 const App = () => {
-  
   return (
     <Router>
-      <div className="flex flex-col min-h-dvh w-full bg-black text-white font-sans antialiased">
+      <div className="flex flex-col bg-black text-white font-sans antialiased">
         <Header />
-        <main className="flex-1 overflow-auto">
+        <main className="flex-1 overflow-auto min-h-0">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/historia" element={<Historia />} />
@@ -23,5 +22,6 @@ const App = () => {
     </Router>
   );
 };
+
 
 export default App;

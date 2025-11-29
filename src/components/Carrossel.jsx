@@ -110,20 +110,21 @@ export function Carrossel({ className = "" }) {
 
   return (
     <div 
-      className={`relative w-72 max-w-[500px] mx-auto wrap-break-word rounded-lg m-2 pb-2 ${className}`}
+      className={`relative w-72 max-w-[500px] mx-auto wrap-break-word rounded-lg px-2 max-h-[calc(100dvh-(--spacing(32)))] ${className}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      
 
-      <div className="bg-black p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+      <div className="bg-black pt-0.5 rounded-lg shadow-md hover:shadow-xl transition-shadow">
 
         <h2 className="font-bold text-center text-xl mb-2 text-white tracking-widest">
           {items[currentIndex].title}
         </h2>
         
-        <img className='h-24 w-auto mx-auto' src={items[currentIndex].logo} alt={items[currentIndex].description} />
+        <img className='h-20 w-auto mx-auto' src={items[currentIndex].logo} alt={items[currentIndex].description} />
 
-        <p className="text-core-cinza text-center wrap-break-word">
+        <p className="text-core-cinza text-l text-center wrap-break-word">
           {items[currentIndex].description}
         </p>
 
@@ -147,10 +148,10 @@ export function Carrossel({ className = "" }) {
       </button>
 
             {/* Indicadores */}
-      <div className="flex justify-center items-center mt-4 space-x-2">
+      <div className="flex justify-center items-center mt-2 space-x-2">
   <button
     onClick={() => handleUserInteraction(prevSlide)}
-    className="bg-gray-600 text-black px-1 rounded-full hover:bg-amber-600 transition-colors shadow-lg hover:shadow-xl xs:hidden"
+    className="text-white hover:bg-amber-600 transition-colors shadow-lg hover:shadow-xl xs:hidden"
     aria-label="Slide anterior"
   >
     ←
@@ -159,7 +160,7 @@ export function Carrossel({ className = "" }) {
     <button
       key={index}
       onClick={() => handleUserInteraction(() => goToSlide(index))}
-      className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-110 ${
+      className={`w-0.5 h-1.5 rounded-full transition-all duration-300 hover:scale-110 ${
         index === currentIndex 
           ? 'bg-white ring-2' 
           : 'bg-gray-400 hover:bg-gray-600'
@@ -169,7 +170,7 @@ export function Carrossel({ className = "" }) {
   ))}
   <button
     onClick={() => handleUserInteraction(nextSlide)}
-    className="bg-gray-600 text-black px-1 rounded-full hover:bg-amber-600 transition-colors shadow-lg hover:shadow-xl xs:hidden"
+    className="text-white hover:bg-amber-600 transition-colors shadow-lg hover:shadow-xl xs:hidden"
     aria-label="Próximo slide"
   >
     →
