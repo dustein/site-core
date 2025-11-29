@@ -8,7 +8,7 @@ import { Galeria } from './pages/Galeria';
 const App = () => {
   return (
     <Router>
-      <div className="flex flex-col bg-black text-white font-sans antialiased">
+      <div className="flex flex-col h-[100vh] justify-between bg-black text-white font-sans antialiased">
         <Header />
         <main className="flex-1 overflow-auto min-h-0">
           <Routes>

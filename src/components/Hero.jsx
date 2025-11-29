@@ -38,13 +38,13 @@ import hero_img from '/images/ia_core_cover-hero-2.png'
 export function Hero() {
   return (
     
-    <div className="relative flex h-[60vh] min-h-[400px] items-center justify-center text-center">
+    <div className="relative flex h-[50vh] items-center justify-center text-center">
       
       <div className="absolute inset-0 bg-cover xs:bg-contain bg-center" style={{ backgroundImage: `url(${hero_img})` }}></div>
 
       <div className="absolute inset-0 bg-black/70"></div>
 
-      <div className="relative z-10 px-4">
+      <div className="relative z-10 px-1">
 
         <h1 className="mb-4 text-6xl  md:text-9xl font-core text-core-cinza tracking-widest">
            CORE

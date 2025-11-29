@@ -110,13 +110,13 @@ export function Carrossel({ className = "" }) {
 
   return (
     <div 
-      className={`relative w-72 max-w-[500px] mx-auto wrap-break-word rounded-lg px-2 max-h-[calc(100dvh-(--spacing(32)))] ${className}`}
+      className={`relative w-72 max-w-[500px] mx-auto wrap-break-word rounded-lg max-h-[calc(100dvh-(--spacing(32)))] ${className}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       
 
-      <div className="bg-black pt-0.5 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+      <div className="bg-black p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow">
 
         <h2 className="font-bold text-center text-xl mb-2 text-white tracking-widest">
           {items[currentIndex].title}
